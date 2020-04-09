@@ -1,6 +1,7 @@
 package com.epam.izh.rd.online.service;
 
 import java.util.Arrays;
+import static java.lang.Math.sqrt;
 
 public class SimpleMathService implements MathService {
 
@@ -133,7 +134,7 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] sort(int[] values) {
-        Arrays.sort(values);
+        Arrays.sort(values);    //Статически не импортировал т.к. sort без класса вызовет рекурсию
         return values;
     }
 
@@ -156,7 +157,7 @@ public class SimpleMathService implements MathService {
         }
 
         /* 3) От 3 х до кв.корня из number проверяем все нечетн. числа */
-        for (int i = 3; i <= (int) Math.sqrt(number); i += 2) {
+        for (int i = 3; i <= (int) sqrt(number); i += 2) {
             if (number % i == 0) {
                 return false;
             }
